@@ -1,0 +1,13 @@
+[package]
+name = "dwarfdump-wasm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gimli = "0.26.2"
+wasm-edit = { path = "../wasm-edit" }
+getopts = "0.2.21"
+regex = "1.7.0"
+fallible-iterator = "0.2.0"
+num_cpus = "1.14.0"
+crossbeam = "0.8.2"
