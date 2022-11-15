@@ -2,10 +2,15 @@
 name = "dwarfdump-wasm"
 version = "0.1.0"
 edition = "2021"
+description = "Dump DWARF sections from a WebAssembly binary"
+authors = ["Sven Sauleau <sven@cloudflare.com>"]
+license = "MIT"
+keywords = ["wasm", "dwarf", "dump", "section", "deub"]
+repository = "https://github.com/xtuc/dwarfdump-wasm"
 
 [dependencies]
 gimli = "0.26.2"
-wasm-edit = { path = "../wasm-edit" }
+wasm-edit = "0.1.2"
 getopts = "0.2.21"
 regex = "1.7.0"
 fallible-iterator = "0.2.0"

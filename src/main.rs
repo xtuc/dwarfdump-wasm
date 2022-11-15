@@ -4,6 +4,7 @@ use std::io;
 use std::io::Read;
 use std::io::Write;
 use std::process;
+use std::sync::Arc;
 
 mod dwarfdump;
 
@@ -163,7 +164,7 @@ fn main() -> std::result::Result<(), BoxError> {
 
         let module = wasm_edit::parser::decode(&input)
             .map_err(|err| format!("failed to parse Wasm module: {}", err))?;
-        let module = wasm_edit::traverse::WasmModule::new(&module);
+        let module = wasm_edit::traverse::WasmModule::new(Arc::new(module));
 
         let endian = gimli::RunTimeEndian::Little;
         let ret = dump_file(&module, endian, &flags);
